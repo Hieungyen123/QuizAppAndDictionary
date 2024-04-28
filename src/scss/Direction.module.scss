@@ -1,0 +1,55 @@
+.Direction {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-direction: column;
+}
+.Direction-Find {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    
+}
+.Search-content {
+    width: 100%;
+    padding: 20px;
+    .Type-word {
+        display: flex;
+        gap: 20px;
+    }
+}
+.input { 
+    width: 50% !important;
+    max-width: 250px;
+}
+button {
+    padding: 7px !important;
+}
+.meaning {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: 10px;
+}
+.title-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.icon-audio {
+    padding: 2px;
+    &:hover {
+       cursor: pointer; 
+       background-color: rgb(224, 224, 224);
+       border-radius: 50%;
+    }
+}
+.example {
+    div {
+        padding: 3px 0;
+    }
+}

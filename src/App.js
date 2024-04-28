@@ -1,23 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import SettingScreen from './pages/SettingScreen.js';
+import { BrowserRouter as Router, Routes, Route, Link, NavLink } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom';
+import FinalScore from './pages/FinalScore.js';
+import Questions from './pages/Questions.js';
+import Direction from './pages/Direction.js';
+import styled from "./scss/App.module.scss";
+import classNames from "classnames/bind";
+
 
 function App() {
+  const cx = classNames.bind(styled);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={cx("App")}>
+      <div className={cx("container")}>
+        <div className={cx("center")}>
+
+          <BrowserRouter>
+            <div className={cx("App-title")}>
+              <h2><NavLink to='/'>Dictionary</NavLink> </h2>
+              <h2><NavLink to='quiz'>Quiz</NavLink> </h2>
+            </div>
+            <Routes>
+              <Route path='/' element={<Direction />} />
+              <Route path='/Dictionary' element={<Direction />} />
+              <Route path='quiz' element={<SettingScreen />} />
+              <Route path='quiz/questions' element={<Questions />} />
+              <Route path='quiz/score' element={<FinalScore />} />
+
+            </Routes>
+          </BrowserRouter>
+        </div>
+      </div>
+
     </div>
   );
 }
