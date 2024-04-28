@@ -4,7 +4,7 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import SettingScreen from './pages/SettingScreen.js';
 import { BrowserRouter as Router, Routes, Route, Link, NavLink } from 'react-router-dom'
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, HashRouter  } from 'react-router-dom';
 import FinalScore from './pages/FinalScore.js';
 import Questions from './pages/Questions.js';
 import Direction from './pages/Direction.js';
@@ -20,7 +20,7 @@ function App() {
       <div className={cx("container")}>
         <div className={cx("center")}>
 
-          <BrowserRouter>
+          <HashRouter >
             <div className={cx("App-title")}>
               <h2><NavLink to='/'>Dictionary</NavLink> </h2>
               <h2><NavLink to='quiz'>Quiz</NavLink> </h2>
@@ -33,7 +33,7 @@ function App() {
               <Route path='quiz/score' element={<FinalScore />} />
 
             </Routes>
-          </BrowserRouter>
+          </HashRouter >
         </div>
       </div>
 
